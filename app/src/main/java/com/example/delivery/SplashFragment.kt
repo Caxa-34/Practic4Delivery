@@ -26,6 +26,7 @@ class splashFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val controller = findNavController()
+
         val sharedPref = context?.getSharedPreferences("deliveryProgramm", Context.MODE_PRIVATE)
         var cnt : Int = sharedPref?.getInt("cnt", 0) ?: return
 
@@ -36,7 +37,7 @@ class splashFragment : Fragment() {
         }
         else {
             Handler(Looper.getMainLooper()).postDelayed({
-                controller.navigate(R.id.mainFragment)
+                controller.navigate(R.id.logInFragment)
             }, 1500)
         }
 

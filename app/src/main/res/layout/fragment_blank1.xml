@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView1_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -22,7 +22,7 @@
         app:srcCompat="@drawable/img_frag1" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textView1_1"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:fontFamily="@font/roboto"
@@ -31,12 +31,12 @@
         android:textColor="@color/main_color"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/textView1_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView1_2"
         android:layout_width="300dp"
         android:layout_height="55dp"
         android:layout_marginBottom="48dp"

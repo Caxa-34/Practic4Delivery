@@ -8,7 +8,7 @@
     tools:context=".onboarding.BlankFragment2">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView2_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/img_frag2" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView2_1"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:text="@string/fr2_txt1"
@@ -29,12 +29,12 @@
         android:textColor="@color/main_color"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/textView2_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView2_2"
         android:layout_width="300dp"
         android:layout_height="75dp"
         android:layout_marginBottom="48dp"
