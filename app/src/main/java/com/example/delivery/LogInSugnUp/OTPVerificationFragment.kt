@@ -1,4 +1,4 @@
-package com.example.delivery
+package com.example.delivery.LogInSugnUp
 
 import android.os.Bundle
 import android.text.Editable
@@ -9,9 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.example.delivery.R
 
 class OTPVerificationFragment : Fragment() {
     override fun onCreateView(

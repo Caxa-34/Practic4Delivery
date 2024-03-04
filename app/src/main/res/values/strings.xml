@@ -18,4 +18,7 @@
     <string name="forgot">Forgot password?</string>
     <string name="send">Send OTP</string>
     <string name="setnewpass">Set new password</string>
+    <string name="mut"><![CDATA[mute, unmute, set location & tracking setting]]></string>
+    <string name="Statements"><![CDATA[Statements & Reports]]></string>
+    <string name="Card"><![CDATA[Card & Bank account settings]]></string>
 </resources>

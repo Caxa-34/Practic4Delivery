@@ -10,11 +10,11 @@
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
-            android:id="@+id/action_splashFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-        <action
             android:id="@+id/action_splashFragment_to_blankFragment1"
             app:destination="@id/blankFragment1" />
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment1"
@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_blankFragment1_to_blankFragment2"
             app:destination="@id/blankFragment2" />
+        <action
+            android:id="@+id/action_blankFragment1_to_logInFragment"
+            app:destination="@id/logInFragment" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment2"
@@ -33,15 +36,15 @@
         <action
             android:id="@+id/action_blankFragment2_to_blankFragment3"
             app:destination="@id/blankFragment3" />
+        <action
+            android:id="@+id/action_blankFragment2_to_logInFragment"
+            app:destination="@id/logInFragment" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment3"
         android:name="com.example.delivery.onboarding.BlankFragment3"
         android:label="fragment_blank3"
         tools:layout="@layout/fragment_blank3" >
-        <action
-            android:id="@+id/action_blankFragment3_to_mainFragment2"
-            app:destination="@id/mainFragment" />
         <action
             android:id="@+id/action_blankFragment3_to_logInFragment"
             app:destination="@id/logInFragment" />
@@ -50,22 +53,20 @@
             app:destination="@id/signUpFragment" />
     </fragment>
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.example.delivery.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
-    <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.delivery.SignUpFragment"
+        android:name="com.example.delivery.LogInSugnUp.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
             android:id="@+id/action_signUpFragment_to_logInFragment"
             app:destination="@id/logInFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/logInFragment"
-        android:name="com.example.delivery.LogInFragment"
+        android:name="com.example.delivery.LogInSugnUp.LogInFragment"
         android:label="fragment_log_in"
         tools:layout="@layout/fragment_log_in" >
         <action
@@ -80,7 +81,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.example.delivery.ForgotPasswordFragment"
+        android:name="com.example.delivery.LogInSugnUp.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" >
         <action
@@ -92,7 +93,7 @@
     </fragment>
     <fragment
         android:id="@+id/newPasswordFragment"
-        android:name="com.example.delivery.NewPasswordFragment"
+        android:name="com.example.delivery.LogInSugnUp.NewPasswordFragment"
         android:label="fragment_new_password"
         tools:layout="@layout/fragment_new_password" >
         <action
@@ -101,11 +102,54 @@
     </fragment>
     <fragment
         android:id="@+id/OTPVerificationFragment"
-        android:name="com.example.delivery.OTPVerificationFragment"
+        android:name="com.example.delivery.LogInSugnUp.OTPVerificationFragment"
         android:label="fragment_o_t_p_verification"
         tools:layout="@layout/fragment_o_t_p_verification" >
         <action
             android:id="@+id/action_OTPVerificationFragment_to_newPasswordFragment"
             app:destination="@id/newPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.delivery.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_addPayMethodFragment"
+            app:destination="@id/addPayMethodFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_notificationSetFragment"
+            app:destination="@id/notificationSetFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_sendPackageFragment"
+            app:destination="@id/sendPackageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPayMethodFragment"
+        android:name="com.example.delivery.profile.AddPayMethodFragment"
+        android:label="fragment_add_pay_method"
+        tools:layout="@layout/fragment_add_pay_method" />
+    <fragment
+        android:id="@+id/notificationSetFragment"
+        android:name="com.example.delivery.profile.NotificationSetFragment"
+        android:label="fragment_notification_set"
+        tools:layout="@layout/fragment_notification_set" />
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.example.delivery.TransactionFragment"
+        android:label="fragment_transaction"
+        tools:layout="@layout/fragment_transaction" >
+        <action
+            android:id="@+id/action_transactionFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendPackageFragment"
+        android:name="com.example.delivery.SendPackageFragment"
+        android:label="fragment_send_package"
+        tools:layout="@layout/fragment_send_package" >
+        <action
+            android:id="@+id/action_sendPackageFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
     </fragment>
 </navigation>

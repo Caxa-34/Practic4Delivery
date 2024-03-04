@@ -28,21 +28,17 @@ class splashFragment : Fragment() {
         val controller = findNavController()
 
         val sharedPref = context?.getSharedPreferences("deliveryProgramm", Context.MODE_PRIVATE)
-        var cnt : Int = sharedPref?.getInt("cnt", 0) ?: return
+        var isLogIn : Boolean = sharedPref?.getBoolean("isLogIn", false) ?: return
 
-        if (cnt == 0) {
+        if (!isLogIn) {
             Handler(Looper.getMainLooper()).postDelayed({
                 controller.navigate(R.id.blankFragment1)
             }, 1500)
         }
         else {
             Handler(Looper.getMainLooper()).postDelayed({
-                controller.navigate(R.id.logInFragment)
+                controller.navigate(R.id.mainFragment)
             }, 1500)
         }
-
-        val editor: SharedPreferences.Editor = sharedPref.edit()
-        editor.putInt("cnt", cnt + 1)
-        editor.commit()
     }
 }

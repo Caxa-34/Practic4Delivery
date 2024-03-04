@@ -26,5 +26,12 @@
         <item name="android:width">100dp</item>
    </style>
 
-
+    <style name="circleButton" parent="Widget.AppCompat.Light.ActionButton">
+        <item name="android:background">@drawable/btn_style_circle</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:tint">@color/white</item>
+        <item name="android:width">64dp</item>
+        <item name="android:height">64dp</item>
+    </style>
 </resources>

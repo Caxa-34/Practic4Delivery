@@ -1,4 +1,4 @@
-package com.example.delivery
+package com.example.delivery.LogInSugnUp
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import com.example.delivery.R
 
 class NewPasswordFragment : Fragment() {
 

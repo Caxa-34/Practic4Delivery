@@ -1,38 +1,38 @@
-package com.example.delivery.onboarding
+package com.example.delivery.LogInSugnUp
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.delivery.R
 
-class BlankFragment1 : Fragment() {
+class SignUpFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank1, container, false)
+        return inflater.inflate(R.layout.fragment_sign_up, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val controller = findNavController()
 
-        val btnNext = view.findViewById<Button>(R.id.f1btnNext)
-        val btnSkip = view.findViewById<Button>(R.id.f1btnSkip)
+        val btnSignup = view.findViewById<Button>(R.id.fsignup_btnSignUp)
+        val btnSignin = view.findViewById<TextView>(R.id.fsignup_btnSignIn)
 
-        btnSkip.setOnClickListener {
-            controller.navigate(R.id.logInFragment)
+        btnSignup.setOnClickListener {
+            controller.navigate(R.id.mainFragment)
         }
-        btnNext.setOnClickListener {
-            controller.navigate(R.id.blankFragment2)
+        btnSignin.setOnClickListener {
+            controller.navigate(R.id.logInFragment)
         }
     }
 }

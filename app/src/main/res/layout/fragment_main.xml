@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".main.MainFragment">
 
     <FrameLayout
         android:id="@+id/fragment_containerM"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottom_navigationM" />
+        android:layout_above="@id/bottom_navigationM"
+        app:defaultNavHost="true"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigationM"
@@ -27,4 +28,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu_nav" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout13"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TrackFragment">
+    tools:context=".main.TrackFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
@@ -14,11 +14,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <TextView
-            android:id="@+id/textViewT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="track" />
+
+        <ImageView
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:layout_marginTop="256dp"
+            android:src="@drawable/img_track"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/gray_color_light" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
