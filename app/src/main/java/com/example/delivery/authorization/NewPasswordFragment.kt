@@ -1,4 +1,4 @@
-package com.example.delivery.LogInSugnUp
+package com.example.delivery.authorization
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -9,15 +9,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.delivery.R
+import com.example.delivery.databinding.FragmentMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainFragment : Fragment() {
-
+    private var _binding : FragmentMainBinding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_main, container, false)
+    ): View {
+        // Inflate the layout for this fragment
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,7 +34,7 @@ class MainFragment : Fragment() {
         editor.putBoolean("isLogIn", true)
         editor.commit()
 
-        val bottomNavigationView = view.findViewById<BottomNavigationView>(R.id.bottom_navigationM)
+        val bottomNavigationView = binding.bottomNavigationM
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_home -> {

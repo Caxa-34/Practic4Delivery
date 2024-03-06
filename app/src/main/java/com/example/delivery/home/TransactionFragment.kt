@@ -1,15 +1,15 @@
-package com.example.delivery
+package com.example.delivery.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.delivery.R
+import com.example.delivery.databinding.FragmentTransactionBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -17,74 +17,65 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class TransactionFragment : Fragment() {
+    private var _binding : FragmentTransactionBinding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_transaction, container, false)
+        _binding = FragmentTransactionBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
     lateinit var rotationJob: Job
     lateinit var img :ImageView
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        img = view.findViewById<ImageView>(R.id.ftrans_img)
-
+        img = binding.ftransImg
         rotationJob = viewLifecycleOwner.lifecycleScope.launch {
             startRotation()
         }
-
-        // Выполнение вычислений и расчетов во втором потоке
         viewLifecycleOwner.lifecycleScope.launch {
-            // Ваши вычисления и расчеты
             delay(3000)
             success()
         }
 
         val controller = findNavController()
-        val btnBackHome = view.findViewById<Button>(R.id.ftrans_btnBackHome)
-        val btnTrackItem = view.findViewById<Button>(R.id.ftrans_btnTrackItem)
-
         val bundle = Bundle()
-        btnBackHome.setOnClickListener {
+        binding.ftransBtnBackHome.setOnClickListener {
             bundle.putString("pageMain", "home");
             controller.navigate(R.id.mainFragment, bundle)
         }
-        btnTrackItem.setOnClickListener {
+        binding.ftransBtnTrackItem.setOnClickListener {
             bundle.putString("pageMain", "track");
             controller.navigate(R.id.mainFragment, bundle)
         }
     }
-
-    // Функция для начала вращения изображения
     private suspend fun startRotation() {
         while (true) {
             withContext(Dispatchers.Main) {
-                img.rotation += -4f // Увеличиваем угол поворота
-                delay(10) // Пауза между кадрами
+                img.rotation += -4f
+                delay(10)
             }
         }
     }
 
     override fun onDestroyView() {
-        rotationJob.cancel() // Останавливаем вращение при уничтожении представления фрагмента
+        rotationJob.cancel()
         super.onDestroyView()
     }
 
     override fun onDestroy() {
-        rotationJob.cancel() // Останавливаем вращение при уничтожении активности
+        rotationJob.cancel()
         super.onDestroy()
     }
 
     fun success() {
-        val img = view?.findViewById<ImageView>(R.id.ftrans_img)
-        val tvSuccess = view?.findViewById<TextView>(R.id.ftrans_tvSuccessful)
+        binding.ftransTvSuccessful.visibility = View.VISIBLE
         rotationJob.cancel()
-        img?.rotation = 0f
-        tvSuccess?.visibility = View.VISIBLE
-        img?.setImageResource(R.drawable.img_success)
-
-
+        img.rotation = 0f
+        img.setImageResource(R.drawable.img_success)
     }
 }

@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.delivery.LogInSugnUp.SignUpFragment"
+        android:name="com.example.delivery.authorization.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -66,7 +66,7 @@
     </fragment>
     <fragment
         android:id="@+id/logInFragment"
-        android:name="com.example.delivery.LogInSugnUp.LogInFragment"
+        android:name="com.example.delivery.authorization.LogInFragment"
         android:label="fragment_log_in"
         tools:layout="@layout/fragment_log_in" >
         <action
@@ -81,7 +81,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.example.delivery.LogInSugnUp.ForgotPasswordFragment"
+        android:name="com.example.delivery.authorization.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" >
         <action
@@ -93,7 +93,7 @@
     </fragment>
     <fragment
         android:id="@+id/newPasswordFragment"
-        android:name="com.example.delivery.LogInSugnUp.NewPasswordFragment"
+        android:name="com.example.delivery.authorization.NewPasswordFragment"
         android:label="fragment_new_password"
         tools:layout="@layout/fragment_new_password" >
         <action
@@ -102,7 +102,7 @@
     </fragment>
     <fragment
         android:id="@+id/OTPVerificationFragment"
-        android:name="com.example.delivery.LogInSugnUp.OTPVerificationFragment"
+        android:name="com.example.delivery.authorization.OTPVerificationFragment"
         android:label="fragment_o_t_p_verification"
         tools:layout="@layout/fragment_o_t_p_verification" >
         <action
@@ -123,6 +123,15 @@
         <action
             android:id="@+id/action_mainFragment_to_sendPackageFragment"
             app:destination="@id/sendPackageFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_notificationSetFragment2"
+            app:destination="@id/notificationSetFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_packageInfoFragment"
+            app:destination="@id/packageInfoFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_chatsFragment"
+            app:destination="@id/chatsFragment" />
     </fragment>
     <fragment
         android:id="@+id/addPayMethodFragment"
@@ -136,7 +145,7 @@
         tools:layout="@layout/fragment_notification_set" />
     <fragment
         android:id="@+id/transactionFragment"
-        android:name="com.example.delivery.TransactionFragment"
+        android:name="com.example.delivery.home.TransactionFragment"
         android:label="fragment_transaction"
         tools:layout="@layout/fragment_transaction" >
         <action
@@ -145,11 +154,52 @@
     </fragment>
     <fragment
         android:id="@+id/sendPackageFragment"
-        android:name="com.example.delivery.SendPackageFragment"
+        android:name="com.example.delivery.home.SendPackageFragment"
         android:label="fragment_send_package"
         tools:layout="@layout/fragment_send_package" >
         <action
             android:id="@+id/action_sendPackageFragment_to_transactionFragment"
             app:destination="@id/transactionFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/deliverySuccessFragment"
+        android:name="com.example.delivery.track.DeliverySuccessFragment"
+        android:label="fragment_delivery_success"
+        tools:layout="@layout/fragment_delivery_success" >
+        <action
+            android:id="@+id/action_deliverySuccessFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/packageInfoFragment"
+        android:name="com.example.delivery.track.PackageInfoFragment"
+        android:label="fragment_package_info"
+        tools:layout="@layout/fragment_package_info" >
+        <action
+            android:id="@+id/action_packageInfoFragment_to_deliverySuccessFragment"
+            app:destination="@id/deliverySuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.delivery.home.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" >
+        <action
+            android:id="@+id/action_chatFragment_to_callingFragment"
+            app:destination="@id/callingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="com.example.delivery.home.ChatsFragment"
+        android:label="fragment_chats"
+        tools:layout="@layout/fragment_chats" >
+        <action
+            android:id="@+id/action_chatsFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/callingFragment"
+        android:name="com.example.delivery.home.CallingFragment"
+        android:label="fragment_calling"
+        tools:layout="@layout/fragment_calling" />
 </navigation>

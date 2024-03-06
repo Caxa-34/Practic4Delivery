@@ -10,65 +10,62 @@ import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
 import com.example.delivery.R
+import com.example.delivery.databinding.FragmentAddPayMethodBinding
 
 class AddPayMethodFragment : Fragment() {
-
+    private var _binding : FragmentAddPayMethodBinding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_pay_method, container, false)
+        _binding = FragmentAddPayMethodBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val controller = findNavController()
-        val btnBack = view.findViewById<ConstraintLayout>(R.id.faddpaymet_btnBack)
-
         val bundle = Bundle()
-        btnBack.setOnClickListener {
+        binding.faddpaymetBtnBack.setOnClickListener {
             bundle.putString("pageMain", "profile");
             controller.navigate(R.id.mainFragment, bundle)
         }
-
-        view.findViewById<ConstraintLayout>(R.id.faddpay_btnWithCard).setOnClickListener {
-            setWithCard(view)
+        binding.faddpayBtnWithCard.setOnClickListener {
+            setWithCard()
         }
-        view.findViewById<RadioButton>(R.id.faddpay_rbWithCard).setOnClickListener {
-            setWithCard(view)
+        binding.faddpayRbWithCard.setOnClickListener {
+            setWithCard()
         }
-        view.findViewById<ConstraintLayout>(R.id.faddpay_btnWithWallet).setOnClickListener {
-            setWithWallet(view)
+        binding.faddpayBtnWithWallet.setOnClickListener {
+            setWithWallet()
         }
-        view.findViewById<RadioButton>(R.id.faddpay_rbWithWallet).setOnClickListener {
-            setWithWallet(view)
+        binding.faddpayRbWithWallet.setOnClickListener {
+            setWithWallet()
         }
-
-        setWithWallet(view)
+        setWithWallet()
     }
 
-    fun setWithWallet(view: View) {
-        view.findViewById<RadioButton>(R.id.faddpay_rbWithCard).isChecked = false
-        view.findViewById<RadioButton>(R.id.faddpay_rbWithWallet).isChecked = true
-        val constraintLayout = view.findViewById<ConstraintLayout>(R.id.faddpay_btnWithCard)
+    fun setWithWallet() {
+        binding.faddpayRbWithCard.isChecked = false
+        binding.faddpayRbWithWallet.isChecked = true
+        val constraintLayout = binding.faddpayBtnWithCard
         val layoutParams = constraintLayout.layoutParams as ViewGroup.LayoutParams
         layoutParams.height = dpToPx(96)
         constraintLayout.layoutParams = layoutParams
     }
 
     var cntCards = 2
-    fun setWithCard(view: View) {
-        //Toast.makeText(context, "!!!", Toast.LENGTH_SHORT).show()
-        view.findViewById<RadioButton>(R.id.faddpay_rbWithCard).isChecked = true
-        view.findViewById<RadioButton>(R.id.faddpay_rbWithWallet).isChecked = false
-        val constraintLayout = view.findViewById<ConstraintLayout>(R.id.faddpay_btnWithCard)
+    fun setWithCard() {
+        binding.faddpayRbWithCard.isChecked = true
+        binding.faddpayRbWithWallet.isChecked = false
+        val constraintLayout = binding.faddpayBtnWithCard
         val layoutParams = constraintLayout.layoutParams as ViewGroup.LayoutParams
         layoutParams.height = dpToPx(64 + cntCards * 72 + 32)
         constraintLayout.layoutParams = layoutParams
 
     }
-
     fun dpToPx(dp: Int): Int {
         val scale = resources.displayMetrics.density
         return (dp * scale + 0.5f).toInt()

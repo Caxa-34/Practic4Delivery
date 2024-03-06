@@ -1,4 +1,4 @@
-package com.example.delivery.LogInSugnUp
+package com.example.delivery.authorization
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,33 +10,29 @@ import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.delivery.R
 
-class LogInFragment : Fragment() {
+class SignUpFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_log_in, container, false)
+        return inflater.inflate(R.layout.fragment_sign_up, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val controller = findNavController()
 
-        val btnSignup = view.findViewById<Button>(R.id.flogin_btnLogIn)
-        val btnForgot = view.findViewById<TextView>(R.id.flogin_btnForgotPassword)
-        val btnSignin = view.findViewById<TextView>(R.id.flogin_btnSignIn)
+        val btnSignup = view.findViewById<Button>(R.id.fsignup_btnSignUp)
+        val btnSignin = view.findViewById<TextView>(R.id.fsignup_btnSignIn)
 
         btnSignup.setOnClickListener {
             controller.navigate(R.id.mainFragment)
         }
         btnSignin.setOnClickListener {
-            controller.navigate(R.id.signUpFragment)
-        }
-        btnForgot.setOnClickListener {
-            controller.navigate(R.id.forgotPasswordFragment)
+            controller.navigate(R.id.logInFragment)
         }
     }
-
 }

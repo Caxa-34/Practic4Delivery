@@ -1,4 +1,4 @@
-package com.example.delivery.LogInSugnUp
+package com.example.delivery.authorization
 
 import android.os.Bundle
 import android.text.Editable
@@ -61,7 +61,7 @@ class OTPVerificationFragment : Fragment() {
                     if (!s.isNullOrEmpty()) {
                         editTexts[i].setBackgroundResource(R.drawable.et_style_otp_with)
                     } else {
-                        editTexts[i].setBackgroundResource(R.drawable.edit_text_otp_without)
+                        editTexts[i].setBackgroundResource(R.drawable.et_otp_without)
                     }
                 }
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {

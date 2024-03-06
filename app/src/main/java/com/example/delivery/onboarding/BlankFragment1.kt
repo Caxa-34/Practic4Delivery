@@ -10,26 +10,30 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import com.example.delivery.R
+import com.example.delivery.databinding.FragmentAddPayMethodBinding
+import com.example.delivery.databinding.FragmentBlank1Binding
 
 class BlankFragment1 : Fragment() {
-
+    private var _binding : FragmentBlank1Binding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank1, container, false)
+        _binding = FragmentBlank1Binding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val controller = findNavController()
 
-        val btnNext = view.findViewById<Button>(R.id.f1btnNext)
-        val btnSkip = view.findViewById<Button>(R.id.f1btnSkip)
+        val btnNext = binding.f1btnNext
+        val btnSkip = binding.f1btnSkip
 
         btnSkip.setOnClickListener {
-            controller.navigate(R.id.logInFragment)
+            controller.navigate(R.id.mainFragment)
         }
         btnNext.setOnClickListener {
             controller.navigate(R.id.blankFragment2)

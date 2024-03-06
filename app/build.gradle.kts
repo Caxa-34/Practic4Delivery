@@ -30,9 +30,13 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
     val nav_version = "2.7.7"
 
     // Java language implementation

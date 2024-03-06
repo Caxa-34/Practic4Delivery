@@ -8,52 +8,50 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
 import com.example.delivery.R
+import com.example.delivery.databinding.FragmentProfileBinding
+import com.example.delivery.databinding.FragmentWalletBinding
 
 class ProfileFragment : Fragment() {
+    private var _binding : FragmentProfileBinding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val controller = findNavController()
 
-        var btnLogOut = view.findViewById<ConstraintLayout>(R.id.fprofile_btnLogOut)
-        btnLogOut.setOnClickListener {
+        binding.fprofileBtnLogOut.setOnClickListener {
             controller.navigate(R.id.logInFragment)
         }
-
-        val btnCard = view.findViewById<ConstraintLayout>(R.id.fprofile_btnCard)
-        btnCard.setOnClickListener {
+        binding.fprofileBtnCard.setOnClickListener {
             controller.navigate(R.id.addPayMethodFragment)
         }
 
-        val btnEditProfile = view.findViewById<ConstraintLayout>(R.id.fprofile_btnEditProfile)
-        btnEditProfile.setOnClickListener {
+        binding.fprofileBtnEditProfile.setOnClickListener {
             //controller.navigate(R.id.notificationSetFragment)
         }
 
-        val btnStatements = view.findViewById<ConstraintLayout>(R.id.fprofile_btnStatements)
-        btnStatements.setOnClickListener {
+        binding.fprofileBtnStatements.setOnClickListener {
             //controller.navigate(R.id.notificationSetFragment)
         }
 
-        val btnRefferals = view.findViewById<ConstraintLayout>(R.id.fprofile_btnRefferals)
-        btnRefferals.setOnClickListener {
+        binding.fprofileBtnRefferals.setOnClickListener {
             //controller.navigate(R.id.transactionFragment)
         }
 
-        val btnAboutUs = view.findViewById<ConstraintLayout>(R.id.fprofile_btnAboutUs)
-        btnAboutUs.setOnClickListener {
-            controller.navigate(R.id.sendPackageFragment)
+        binding.fprofileBtnAboutUs.setOnClickListener {
+            //controller.navigate(R.id.sendPackageFragment)
         }
 
-        val btnNotification = view.findViewById<ConstraintLayout>(R.id.fprofile_btnNotificSet)
-        btnNotification.setOnClickListener {
+        binding.fprofileBtnNotificSet.setOnClickListener {
             controller.navigate(R.id.notificationSetFragment)
         }
     }

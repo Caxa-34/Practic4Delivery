@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout16"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SendPackageFragment">
+    tools:context=".home.SendPackageFragment">
 
     <ScrollView
         android:id="@+id/fsendpack_svInputData"
@@ -41,7 +41,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="2dp"
-                        android:src="@drawable/omg_origin" />
+                        android:src="@drawable/img_origin" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -1132,7 +1132,7 @@
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="24dp"
-                android:src="@drawable/img_line" />
+                android:src="@drawable/img_line_horiz" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -1226,7 +1226,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="12dp"
-                    android:src="@drawable/img_line" />
+                    android:src="@drawable/img_line_horiz" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
