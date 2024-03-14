@@ -21,11 +21,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
+            android:fontFamily="@font/roboto_bold"
             android:text="Package info"
             android:textColor="@color/gray_color_dark"
             android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -78,10 +77,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                android:fontFamily="@font/roboto_bold"
                 android:text="Package Information"
                 android:textColor="@color/main_color"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -103,6 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/roboto"
                     android:text="Mbaraugba, Ovom Amaa Asaa, Abia state"
                     android:textColor="@color/gray_color_dark" />
 
@@ -110,6 +110,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/roboto"
                     android:text="+234 56543 96854"
                     android:textColor="@color/gray_color_dark" />
 
@@ -141,6 +142,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:fontFamily="@font/roboto"
                         android:text="Mbaraugba, Ovom Amaa Asaa, Abia state"
                         android:textColor="@color/gray_color_dark" />
 
@@ -148,6 +150,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:fontFamily="@font/roboto"
                         android:text="+234 56543 96854"
                         android:textColor="@color/gray_color_dark" />
                 </LinearLayout>
@@ -371,11 +374,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:fontFamily="@font/roboto"
+                    android:fontFamily="@font/roboto_bold"
                     android:text="Charges"
                     android:textColor="@color/main_color"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -498,8 +500,8 @@
                     style="@style/secondaryButton"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
                     android:text="Report"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -509,8 +511,8 @@
                     style="@style/primaryButton"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
                     android:text="Successful"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

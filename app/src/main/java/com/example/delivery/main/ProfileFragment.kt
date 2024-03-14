@@ -10,6 +10,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.delivery.R
 import com.example.delivery.databinding.FragmentProfileBinding
 import com.example.delivery.databinding.FragmentWalletBinding
+import java.text.DecimalFormat
+
 
 class ProfileFragment : Fragment() {
     private var _binding : FragmentProfileBinding? = null
@@ -24,6 +26,8 @@ class ProfileFragment : Fragment() {
         return view
     }
 
+    var isBalanceVisible = true
+    var currentBalance :Float = 10712f
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val controller = findNavController()
@@ -36,23 +40,39 @@ class ProfileFragment : Fragment() {
         }
 
         binding.fprofileBtnEditProfile.setOnClickListener {
-            //controller.navigate(R.id.notificationSetFragment)
         }
 
         binding.fprofileBtnStatements.setOnClickListener {
-            //controller.navigate(R.id.notificationSetFragment)
         }
 
         binding.fprofileBtnRefferals.setOnClickListener {
-            //controller.navigate(R.id.transactionFragment)
         }
 
         binding.fprofileBtnAboutUs.setOnClickListener {
-            //controller.navigate(R.id.sendPackageFragment)
         }
 
         binding.fprofileBtnNotificSet.setOnClickListener {
             controller.navigate(R.id.notificationSetFragment)
         }
+
+        binding.fprofileBtnShowBalance.setOnClickListener {
+            isBalanceVisible = !isBalanceVisible
+            if (isBalanceVisible) {
+                // Показать баланс
+                binding.fprofileEtBalance.text = formatBalance(currentBalance)
+            } else {
+                // Скрыть баланс
+                binding.fprofileEtBalance.text = "**********"
+            }
+
+            val drawableRes = if (isBalanceVisible) R.drawable.img_eye
+            else R.drawable.img_eye_slash
+            binding.fprofileBtnShowBalance.setImageResource(drawableRes)
+        }
+
+    }
+    fun formatBalance(balance: Float): String {
+        val decimalFormat = DecimalFormat("N##,###.00")
+        return decimalFormat.format(balance)
     }
 }

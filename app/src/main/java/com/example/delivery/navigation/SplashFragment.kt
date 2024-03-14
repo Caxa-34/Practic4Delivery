@@ -1,4 +1,4 @@
-package com.example.delivery
+package com.example.delivery.navigation
 
 import android.content.Context
 import android.content.SharedPreferences

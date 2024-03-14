@@ -326,16 +326,17 @@
             android:id="@+id/fchats_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
             android:layout_weight="1"
             android:background="@drawable/layout_style_gray_dark"
             android:drawableRight="@drawable/img_search"
             android:ems="10"
+            android:fontFamily="@font/roboto"
             android:hint="Search for a driver"
             android:inputType="text"
             android:padding="12dp"
             android:textColorHint="@color/gray_color_dark"
-            android:textSize="14sp"
-            android:layout_marginLeft="12dp"/>
+            android:textSize="14sp" />
 
         <ImageView
             android:layout_width="wrap_content"

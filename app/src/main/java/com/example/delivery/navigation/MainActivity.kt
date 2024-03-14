@@ -1,11 +1,8 @@
-package com.example.delivery
+package com.example.delivery.navigation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.delivery.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

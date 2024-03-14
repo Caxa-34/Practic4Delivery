@@ -31,7 +31,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:fontFamily="@font/roboto"
+        android:fontFamily="@font/roboto_bold"
         android:text="Enter the 6 digit numbers sent to your email"
         android:textColor="@color/gray_color_dark"
         android:textSize="14sp"
@@ -70,14 +70,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="If you didn’t receive code, " />
+            android:fontFamily="@font/roboto"
+            android:text="If you didn’t receive code, "
+            android:textColor="@color/gray_color_dark" />
 
         <TextView
             android:id="@+id/otpver_tvResend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="resend after 1:00" />
+            android:fontFamily="@font/roboto"
+            android:text="resend after 1:00"
+            android:textColor="@color/gray_color_dark" />
     </LinearLayout>
 
     <LinearLayout

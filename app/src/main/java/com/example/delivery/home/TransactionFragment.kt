@@ -34,6 +34,7 @@ class TransactionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         img = binding.ftransImg
+
         rotationJob = viewLifecycleOwner.lifecycleScope.launch {
             startRotation()
         }

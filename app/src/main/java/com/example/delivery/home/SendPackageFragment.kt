@@ -26,10 +26,8 @@ class SendPackageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val controller = findNavController()
-        val bundle = Bundle()
         binding.fsendpackBtnBack.setOnClickListener {
-            bundle.putString("pageMain", "profile");
-            controller.navigate(R.id.mainFragment, bundle)
+            controller.navigate(R.id.mainFragment)
         }
         binding.fsendpackBtnNext.setOnClickListener {
             nextClick(view)
@@ -48,13 +46,13 @@ class SendPackageFragment : Fragment() {
                 cntDestDetails++
 
                 when (cntDestDetails) {
-                    2 -> binding.fsendpackLlDestDetail1.visibility =
+                    2 -> binding.fsendpackLlDestDetail2.visibility =
                         View.VISIBLE
-                    3 -> binding.fsendpackLlDestDetail2.visibility =
+                    3 -> binding.fsendpackLlDestDetail3.visibility =
                         View.VISIBLE
-                    4 -> binding.fsendpackLlDestDetail3.visibility =
+                    4 -> binding.fsendpackLlDestDetail4.visibility =
                         View.VISIBLE
-                    5 -> binding.fsendpackLlDestDetail4.visibility =
+                    5 -> binding.fsendpackLlDestDetail5.visibility =
                         View.VISIBLE
                 }
             }

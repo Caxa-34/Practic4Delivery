@@ -19,11 +19,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
+            android:fontFamily="@font/roboto_bold"
             android:text="Profile"
             android:textColor="@color/gray_color_dark"
             android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,10 +70,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
                     android:text="Hello Ken"
                     android:textColor="@color/text_color_light"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -84,16 +83,18 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
                         android:text="Current balance:"
                         android:textColor="@color/text_color_light"
                         android:textSize="11sp" />
 
                     <TextView
+                        android:id="@+id/fprofile_etBalance"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:layout_weight="1"
-                        android:text="N10,712:00"
+                        android:text="**********"
                         android:textColor="@color/info_color"
                         android:textSize="11sp"
                         android:textStyle="bold" />
@@ -102,11 +103,12 @@
             </LinearLayout>
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="0dp"
+                android:id="@+id/fprofile_btnShowBalance"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
-                android:src="@drawable/img_eye"
+                android:src="@drawable/img_eye_slash"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -152,14 +154,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
                     android:text="Edit Profile"
                     android:textColor="@color/text_color_light"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="Name, phone no, address, email ..."
                     android:textColor="@color/gray_color_dark"
                     android:textSize="11sp" />
@@ -214,14 +217,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
                     android:text="@string/Statements"
                     android:textColor="@color/text_color_light"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="Download transaction details, orders, deliveries"
                     android:textColor="@color/gray_color_dark"
                     android:textSize="11sp" />
@@ -275,14 +279,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
                     android:text="Notification Settings"
                     android:textColor="@color/text_color_light"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/mut"
                     android:textColor="@color/gray_color_dark"
                     android:textSize="11sp" />
@@ -336,14 +341,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
                     android:text="@string/Card"
                     android:textColor="@color/text_color_light"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="change cards, delete card details"
                     android:textColor="@color/gray_color_dark"
                     android:textSize="11sp" />
@@ -397,14 +403,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
                     android:text="Referrals"
                     android:textColor="@color/text_color_light"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="check no of friends and earn"
                     android:textColor="@color/gray_color_dark"
                     android:textSize="11sp" />
@@ -458,15 +465,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
                     android:text="About Us"
                     android:textColor="@color/text_color_light"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/button_description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="know more about us, terms and conditions"
                     android:textColor="@color/gray_color_dark"
                     android:textSize="11sp" />
@@ -523,10 +531,10 @@
                     android:id="@+id/button_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
                     android:text="Log out"
                     android:textColor="@color/text_color_light"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -552,10 +560,10 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="16dp"
+            android:fontFamily="@font/roboto_bold"
             android:text="Enable dark Mode"
             android:textColor="@color/text_color_light"
             android:textSize="16sp"
-            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/fprofile_btnEditProfile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

@@ -33,7 +33,7 @@ class BlankFragment1 : Fragment() {
         val btnSkip = binding.f1btnSkip
 
         btnSkip.setOnClickListener {
-            controller.navigate(R.id.mainFragment)
+            controller.navigate(R.id.logInFragment)
         }
         btnNext.setOnClickListener {
             controller.navigate(R.id.blankFragment2)
